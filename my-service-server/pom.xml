@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spi-demo</artifactId>
+        <groupId>com.lloop</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>my-service-server</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.lloop</groupId>
+            <artifactId>my-service-api</artifactId>
+        </dependency>
+        <!-- 根据需要选择性添加以下依赖 -->
+<!--        <dependency>-->
+<!--            <groupId>com.lloop</groupId>-->
+<!--            <artifactId>my-service-a</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.lloop</groupId>-->
+<!--            <artifactId>my-service-b</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.lloop</groupId>-->
+<!--            <artifactId>my-service-c</artifactId>-->
+<!--        </dependency>-->
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>abc-active</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>com.lloop</groupId>
+                    <artifactId>my-service-a</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>com.lloop</groupId>
+                    <artifactId>my-service-b</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>com.lloop</groupId>
+                    <artifactId>my-service-c</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>bc-active</id>
+            <dependencies>
+                <dependency>
+                    <groupId>com.lloop</groupId>
+                    <artifactId>my-service-b</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>com.lloop</groupId>
+                    <artifactId>my-service-c</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.lloop.spidemo.ServerApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project> 
