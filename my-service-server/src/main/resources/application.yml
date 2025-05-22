@@ -1,11 +1,11 @@
 server:
   port: 8080
 
-spring:
-  profiles:
-    active: bc-active
-
 # 插件配置
 plugin:
   a:
     enabled: true  # 设置为 false 时将禁用插件 A
+  b:
+    enabled: true
+  c:
+    enabled: false

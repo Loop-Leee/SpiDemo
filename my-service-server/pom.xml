@@ -16,22 +16,16 @@
             <groupId>com.lloop</groupId>
             <artifactId>my-service-api</artifactId>
         </dependency>
-        <!-- 根据需要选择性添加以下依赖 -->
-<!--        <dependency>-->
-<!--            <groupId>com.lloop</groupId>-->
-<!--            <artifactId>my-service-a</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.lloop</groupId>-->
-<!--            <artifactId>my-service-b</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.lloop</groupId>-->
-<!--            <artifactId>my-service-c</artifactId>-->
-<!--        </dependency>-->
+
+        <!-- Spring Boot Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
 
     <profiles>
+        <!-- 根据需要选择性添加以下依赖 -->
         <profile>
             <id>abc-active</id>
             <activation>
